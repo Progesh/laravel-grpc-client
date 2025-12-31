@@ -1,0 +1,13 @@
+services:
+  order-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8000:80"
+    volumes:
+      - .:/var/www/html
+networks:
+  default:
+    external: true
+    name: laravel_microservices_network
